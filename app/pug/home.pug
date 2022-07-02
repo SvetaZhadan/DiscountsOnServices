@@ -1,0 +1,28 @@
+include layouts/_base
+include layouts/_combinations
+include layouts/_modules
++m-head('Home page')
+
++header
+.home-page.container
+  +m-baner 
+
+  .home-page__choses
+    h2 Choose a subscription
+    +c-choose('Netflix subscription rates', 'The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also.','#','../assets/images/ntflx.svg','netflix')
+    +c-choose('Spotify Premium', 'The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also.','#','../assets/images/sptf.svg','spotify')
+    +c-choose('YouTube Premium', 'The constant contributes to the task of the same and thus the intended features and the set relation to the check and set also.','#','../assets/images/ytb.svg','youtube')
+
+  .home-page__steps
+    h2 How it works?
+    +m-steps
+    +c-invite
+
+  .home-page__about 
+    h2 About us
+    +m-about
+  .home-page__faq 
+    h2 FAQ
+
+    +c-faqs 
++footer

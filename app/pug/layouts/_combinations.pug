@@ -1,0 +1,35 @@
+mixin c-choose(title, text, href, src, className)
+  .c-choose
+    .col.info
+      h2=title 
+      p=text
+      a(href=href) 
+        +b-button Learn more
+    .col.condition(class=className) 
+      img(src=src, alt="", srcset="")
+  
+mixin c-step(title, text, src)
+  .c-step 
+    span.c-step__img
+      img(src=src, alt="")
+    div
+      h4=title
+      p=text
+
+mixin c-invite
+  .c-invite
+    div
+      h3 Invite friends
+      p Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL
+    .c-invite__link Click on the link <br>
+      a(href='#') Discounts On Services
+        include ../../assets/images/file-copy-line.svg
+
+mixin c-faqs 
+  template.c-faqs-temp 
+    .c-faqs
+      h6 How to pay?
+      p Payment options we currently have: PayPal, Bitcoin.
+      
+
+    

@@ -1,0 +1,155 @@
+/* ================================ Styles ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,600;0,700;0,800;0,900;1,300;1,600&display=swap');
+
+$color-blue: #1749b3;
+$color-blue-lght: #4b84fd;
+$color-red: #fe0000;
+$color-black-1: #333333;
+$color-black-2: #171717;
+$color-gray: #606060;
+$color-gray-lght: #d3d3d3;
+$color-white: #ffffff;
+$color-background: #ecf3fb;
+
+@mixin text-style-heading-1 {
+  font-family: Mulish, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-heading-2 {
+  font-family: Mulish, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-heading-3 {
+  font-family: Mulish, sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 140%;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-heading-4 {
+  font-family: Mulish, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-heading-5 {
+  font-family: Mulish, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-button {
+  font-family: Mulish, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 130%;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-paragraph-blog-r {
+  font-family: Mulish, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-paragraph {
+  font-family: Mulish, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-m-heading-1 {
+  font-family: Mulish, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-m-heading-2 {
+  font-family: Mulish, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-m-heading-3 {
+  font-family: Mulish, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-m-heading-4 {
+  font-family: Mulish, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-m-heading-5 {
+  font-family: Mulish, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-m-paragraph-blog {
+  font-family: Mulish, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+}
+@mixin text-style-m-paragraph {
+  font-family: Mulish, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+}

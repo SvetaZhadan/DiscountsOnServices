@@ -1,0 +1,155 @@
+/* ================================ Base ================================ */
+
+body{
+  background-color: $color-background;
+  font-family: Mulish, sans-serif;
+}
+
+p{
+  @include text-style-paragraph;
+}
+
+a{
+  @include text-style-paragraph;
+  color: $color-black-1;
+  transition-duration: 0.3s;
+
+  &:hover{
+    color: $color-blue;
+  }
+
+  &:active{
+    color: $color-blue-lght;
+  }
+}
+
+svg{
+  
+  path{
+    transition-duration: 0.3s;
+  }
+
+}
+
+li{
+  display: inline;
+}
+
+h1{
+  @include text-style-heading-1;
+}
+
+h2{
+  @include text-style-heading-2;
+}
+
+h3{
+  @include text-style-heading-3;
+}
+
+h4{
+  @include text-style-heading-4;
+}
+
+h5{
+  @include text-style-heading-5;
+}
+
+button{
+  @include text-style-button;
+}
+
+.b-iconButton{
+
+  svg{
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover{
+
+    svg{
+
+      path{
+        fill: $color-blue;
+      }
+    }
+  }
+
+  &:active{
+
+    svg{
+
+      path{
+        fill: $color-blue-lght;
+      }
+    }
+  }
+
+  &.--white{
+
+    svg{
+
+      path{
+        fill: $color-white;
+      }
+    }
+  }
+}
+
+.b-button{
+  padding: 9px 0;
+  color: $color-white;
+  background-color: $color-blue;
+  border-radius: 12px;
+  transition-duration: 0.3s;
+
+  &:hover{
+    color: $color-black-2;
+    background-color: $color-white;
+    border: 1px solid $color-blue;
+  }
+
+  &:active{
+    color: $color-white;
+    background-color: $color-blue-lght;
+    border: 1px solid $color-blue-lght;
+  }
+
+  &.--black{
+    background-color: $color-black-1;
+
+    &:hover{
+      background-color: $color-white;
+      border: 1px solid $color-black-1;
+    }
+
+    &:active{
+      color: $color-white;
+      background-color: $color-gray;
+      border: 1px solid $color-gray;
+    }
+  }
+
+  &.--white{
+    color: $color-blue;
+    background-color: $color-white;
+    border: 1px solid $color-blue;
+
+    &:hover{
+      color: $color-white;
+      background-color: $color-blue;
+    }
+
+    &:active{
+      color: $color-white;
+      background-color: $color-blue-lght;
+      border: 1px solid $color-blue-lght;
+    }
+  }
+}
+
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+}

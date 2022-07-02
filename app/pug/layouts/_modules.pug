@@ -1,0 +1,208 @@
+mixin m-head(title)
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title=title
+    meta(name='description' content='Web Project')
+    meta(name='author' content='ASTEQ')
+    meta(property='og:title' content='Web Project')
+    meta(property='og:type' content='website')
+    meta(property='og:url' content='write your link')
+    meta(property='og:description' content='Web Project')
+    meta(property='og:image' content='write your path')
+    link(rel='icon' href='write your path')
+    link(rel='icon' href='write your path' type='image/svg+xml')
+    link(rel='apple-touch-icon' href='write your path')
+
+mixin header
+  header.header
+    .header__wrapper.container
+      .header__logo 
+        include ../../assets/images/logo.svg
+        p DiscountsOnServices
+      .header__content 
+        nav 
+          a(href="#").header__sub(data-toggle) Subscriptions
+            span.arrow
+              include ../../assets/images/actions/arrow-down-s-line.svg
+          span.toggle__popup
+            a(href="#") Netflix
+            a(href="#") YouTube Premium
+            a(href="#") Spotify
+          li 
+            a(href="#") FAQ
+          li 
+            a(href="#") Support
+          li 
+            a(href="#") About
+        div 
+          a(href="#")(data-toggle)  EN
+            sapn.arrow
+              include ../../assets/images/actions/arrow-down-s-line.svg
+          span.toggle__popup
+            a(href="#") English
+            a(href="#") Ukraine
+            a(href="#") Russian
+          span.socials
+            +b-iconButton
+              include ../../assets/images/icons/whatsapp-fill.svg
+            +b-iconButton
+              include ../../assets/images/icons/telegram-fill.svg
+
+          +b-button Log in
+      .header__burger(data-burger-menu)
+        +b-iconButton 
+          include ../../assets/images/actions/burger.svg
+      .header__close(data-burger-menu)
+        +b-iconButton 
+          include ../../assets/images/actions/close-fill.svg
+
+mixin footer 
+  footer.footer 
+    .footer__wrapper.container
+      .footer__col
+        .footer__logo 
+          include ../../assets/images/logo.svg
+          p DiscountsOnServices
+        p.footer__text It's simple, fast and economical
+      .footer__content
+        .footer__content-wrapper
+          div
+            p Subscriptions
+            ul 
+              li 
+                a(href="#") Netflix
+              li 
+                a(href="#") YouTube Premium
+              li  
+                a(href="#") Spotify        
+          div
+            p Site navigation
+            ul 
+              li 
+                a(href="#") About
+              li 
+                a(href="#") FAQ
+              li  
+                a(href="#") Support
+        div.footer__info
+          span.socials
+            +b-iconButton('--white')
+              include ../../assets/images/icons/whatsapp-fill.svg
+            +b-iconButton('--white')
+              include ../../assets/images/icons/telegram-fill.svg
+          a(href="#")(data-toggle)  EN
+            sapn.arrow
+              include ../../assets/images/actions/arrow-down-s-line.svg
+          //- span.toggle__popup
+          //-   a(href="#") English
+          //-   a(href="#") Ukraine
+          //-   a(href="#") Russian
+    .footer__row.container
+      p Privacy Policy
+      p Copyright 2021 © All Rights Reserved
+      p Developed by Svetlana
+
+mixin m-baner 
+  .m-baner
+    .m-baner__info
+      h1 Start enjoying a benefit of up to 50%
+      p You have always wanted to get the same product at a special price for you, without haggling - and it is yours.
+      +b-button('--white') Start using
+    .m-baner__img
+      img(src="../../assets/images/Rectangle.png", alt="", srcset="")
+
+mixin m-steps 
+  .m-steps 
+    +c-step('Step 1', 'Enter your account information','../../assets/images/Bell.svg')
+    +c-step('Step 2', 'Select the desired subscription and plan','../../assets/images/Illustrations.svg')
+    +c-step('Step 3', 'Pay your bill with PayPal','../../assets/images/Success.svg')
+
+mixin m-about
+  .m-about
+    .m-about__info 
+      include ../../assets/images/logo.svg
+      p We offer you a subscription to various media services at the best price.
+      p We have partnered with several companies to help you find the best prices for your media subscriptions and provide you with the best prices for the Premium subscriptions you want.
+      p It's simple, fast and economical.
+    .m-about__img 
+      img(src="../../assets/images/Rectangle-2.png", alt="", srcset="")
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
