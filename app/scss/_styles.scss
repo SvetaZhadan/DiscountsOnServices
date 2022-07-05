@@ -56,6 +56,14 @@ $color-background: #ecf3fb;
   text-transform: none;
   text-decoration: none;
 }
+
+@mixin text-style-heading-6 {
+  font-family: Mulish, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
 @mixin text-style-button {
   font-family: Mulish, sans-serif;
   font-size: 17px;

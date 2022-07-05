@@ -1,12 +1,11 @@
-mixin c-choose(title, text, href, src, className)
-  .c-choose
-    .col.info
-      h2=title 
-      p=text
-      a(href=href) 
+mixin c-choose
+  template.c-choose-temp
+    .c-choose
+      .info
+        h2.name
+        p.description
         +b-button Learn more
-    .col.condition(class=className) 
-      img(src=src, alt="", srcset="")
+      img(src='', alt="", srcset="").img
   
 mixin c-step(title, text, src)
   .c-step 
@@ -28,8 +27,19 @@ mixin c-invite
 mixin c-faqs 
   template.c-faqs-temp 
     .c-faqs
-      h6 How to pay?
-      p Payment options we currently have: PayPal, Bitcoin.
-      
+      div
+        h6.question 
+        span
+          include ../../assets/images/arrow-downsvg.svg
+      p.answer
 
-    
+mixin c-card 
+  template.c-card-temp 
+    .c-card 
+      h2.name Basic
+      ul.items
+        li Ad-free music listening
+        li Play anywhere - even offline
+        li On-demand playback
+      p.price 45
+        

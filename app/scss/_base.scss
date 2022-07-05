@@ -55,6 +55,10 @@ h5{
   @include text-style-heading-5;
 }
 
+h6{
+  @include text-style-heading-6;
+}
+
 button{
   @include text-style-button;
 }
@@ -98,25 +102,40 @@ button{
 }
 
 .b-button{
+  a{
+    @include text-style-button;
+    color: $color-white;
+    transition-duration: 0.3s;
+  }
   padding: 9px 0;
-  color: $color-white;
   background-color: $color-blue;
   border-radius: 12px;
   transition-duration: 0.3s;
+  border: 1px solid transparent;
 
   &:hover{
-    color: $color-black-2;
+    a{
+
+      color: $color-black-2;
+    }
     background-color: $color-white;
     border: 1px solid $color-blue;
   }
 
   &:active{
-    color: $color-white;
+    a{
+
+      color: $color-white;
+    }
     background-color: $color-blue-lght;
     border: 1px solid $color-blue-lght;
   }
 
   &.--black{
+
+    a{
+      color: $color-white;
+    }
     background-color: $color-black-1;
 
     &:hover{
@@ -125,24 +144,37 @@ button{
     }
 
     &:active{
-      color: $color-white;
+      a{
+
+        color: $color-white;
+      }
       background-color: $color-gray;
       border: 1px solid $color-gray;
     }
   }
 
   &.--white{
-    color: $color-blue;
+
+    a{
+      color: $color-black-2;
+    }
+
     background-color: $color-white;
     border: 1px solid $color-blue;
 
     &:hover{
-      color: $color-white;
+      a{
+
+        color: $color-white;
+      }
       background-color: $color-blue;
     }
 
     &:active{
-      color: $color-white;
+      a{
+
+        color: $color-white;
+      }
       background-color: $color-blue-lght;
       border: 1px solid $color-blue-lght;
     }

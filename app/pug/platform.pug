@@ -1,0 +1,15 @@
+include layouts/_base
+include layouts/_combinations
+include layouts/_modules
+
++m-head('Platform')
+
+mixin platform-page 
+  .platform-page.container
+      h1 Choose a 
+        span.name  
+        |  Plan
+      p.subtitle 
+      p 6/12
+      .platform-page__cards
+        +c-card 
