@@ -26,8 +26,7 @@ const info=[
     name: 'Netflix',
     description:'Netflix can be accessed via web browsers or via application software installed on smart TVs, set-top boxes connected to televisions, tablet computers, smartphones.',
     img:'../assets/images/ntflx.png',
-    link:'netflix',
-    subtitle:'n123',
+    subtitle:'Watch movies without limits at a bargain price',
     plans:[
       {
         name:'Basic',
@@ -35,6 +34,7 @@ const info=[
           'Ad-free music listening','Play anywhere - even offline','On-demand playback' 
         ],
         price:45,
+        newprice:80,
       },
       {
         name:'Standart',
@@ -42,6 +42,7 @@ const info=[
           'Standart Ad-free music listening','Play anywhere - even offline','On-demand playback' 
         ],
         price:60,
+        newprice:110,
       },
       {
         name:'Premium',
@@ -49,6 +50,7 @@ const info=[
           'Premium Ad-free music listening','Play anywhere - even offline','On-demand playback' 
         ],
         price:80,
+        newprice:150,
       },
     ]
   },
@@ -57,8 +59,7 @@ const info=[
     name: 'YouTube Premium',
     description:'The service provides ad-free access to content across the service, as well as access to premium YouTube',
     img:'../assets/images/ytb.png',
-    link:'youtube',
-    subtitle:'y123',
+    subtitle:'Enjoy videos without limits at a bargain price',
     plans:[
       {
         name:'Music',
@@ -80,8 +81,7 @@ const info=[
     name: 'Spotify',
     description:'Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies.',
     img:'../assets/images/sptf.png',
-    link:'spotify',
-    subtitle:'s123',
+    subtitle:'Listen your favorite music without limits at a bargain price',
     plans:[
       {
         name:'Individual',

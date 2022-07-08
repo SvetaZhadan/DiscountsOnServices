@@ -102,11 +102,8 @@ button{
 }
 
 .b-button{
-  a{
-    @include text-style-button;
-    color: $color-white;
-    transition-duration: 0.3s;
-  }
+  @include text-style-button;
+  color: $color-white;
   padding: 9px 0;
   background-color: $color-blue;
   border-radius: 12px;
@@ -114,67 +111,47 @@ button{
   border: 1px solid transparent;
 
   &:hover{
-    a{
-
-      color: $color-black-2;
-    }
+    color: $color-black-2;
     background-color: $color-white;
     border: 1px solid $color-blue;
   }
 
   &:active{
-    a{
-
-      color: $color-white;
-    }
+    color: $color-white;
     background-color: $color-blue-lght;
     border: 1px solid $color-blue-lght;
   }
 
   &.--black{
 
-    a{
-      color: $color-white;
-    }
+    color: $color-white;
     background-color: $color-black-1;
 
     &:hover{
+      color: $color-black-1;
       background-color: $color-white;
       border: 1px solid $color-black-1;
     }
 
     &:active{
-      a{
-
-        color: $color-white;
-      }
+      color: $color-white;
       background-color: $color-gray;
       border: 1px solid $color-gray;
     }
   }
 
-  &.--white{
-
-    a{
-      color: $color-black-2;
-    }
-
+  &.--white{    
+    color: $color-black-2;
     background-color: $color-white;
     border: 1px solid $color-blue;
 
     &:hover{
-      a{
-
-        color: $color-white;
-      }
+      color: $color-white;
       background-color: $color-blue;
     }
 
     &:active{
-      a{
-
-        color: $color-white;
-      }
+      color: $color-white;
       background-color: $color-blue-lght;
       border: 1px solid $color-blue-lght;
     }
@@ -184,4 +161,87 @@ button{
 .container{
   max-width: 1440px;
   margin: 0 auto;
+}
+
+$togglewidth:360px;
+
+.b-toggle {
+  position: relative;
+  display: inline-block;
+  width: $togglewidth;
+  height: 61px;
+  font-size: 18px;
+
+  &__input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  &__slider::before {
+    position: absolute;
+    display: flex;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background-color: $color-blue;
+    transition: 0.4s;
+  }
+
+  &__input:checked + &__slider {
+    display: flex;
+    align-items: center;
+    // background-color: $color-gray;
+    background-color: transparent;
+
+    .b-toggle__container-x2 {
+      color: $color-white;
+    }
+
+    .b-toggle__container-x1 {
+      color: $color-black-2;
+    }
+  }
+
+  &__input:checked + &__slider::before {
+    transform: translateX($togglewidth/2);
+  }
+  .--round {
+    border-radius: 12px;
+    border: 1px solid $color-blue;
+
+    &::before {
+      border-radius: 12px;
+    }
+  }
+
+  &__container {
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    color: $color-black-2;
+
+    &-x1 {
+      color: $color-white;
+      transition-duration: 0.3s;
+    }
+
+    &-x2 {
+      transition-duration: 0.3s;
+    }
+  }
 }

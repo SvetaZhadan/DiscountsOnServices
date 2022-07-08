@@ -4,5 +4,12 @@ mixin b-iconButton(className)
 
 mixin b-button(className)
   button.b-button(class=className)
-    a(href='#').link
-      block
+    block
+
+mixin b-toggle
+  label.b-toggle
+    input.b-toggle__input(type="checkbox")
+    span.b-toggle__slider.--round
+      span.b-toggle__container
+        span.b-toggle__container-x1 6 months 
+        span.b-toggle__container-x2 12 months 

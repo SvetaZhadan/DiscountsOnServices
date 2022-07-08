@@ -1,5 +1,60 @@
 .platform-page{
-  transition: 0.3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+  transition: height 0.3s;
+
+  &.--active{
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
+
+  .b-toggle{
+    display: none;
+  }
+
+  .btn-return{
+    position: fixed;
+    bottom: 10px;
+    display: none;
+    opacity: 0.5;
+    transition-duration: 0.3s;
+
+    &.--on-scroll{
+      bottom: -10px;
+      opacity: 0;
+    }
+
+    .b-button{
+      width: 200px;
+
+      svg{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        transform: rotate(90deg);
+
+        path{
+          fill: $color-white;
+        }
+      }
+
+      &:hover{
+        color: $color-black-1;
+
+        svg{
+
+          path{
+            fill: $color-black-1;
+          }
+        }
+      }
+    }
+  }
+
   
   h1{
     margin-bottom: 20px;
@@ -9,5 +64,23 @@
   p{
     font-size: 18px;
     text-align: center;
+  }
+
+  .subtitle{
+    margin-bottom: 52px;
+  }
+
+  &__cards{
+    display: flex;
+    margin-top: 48px;
+    margin-bottom: 120px;
+
+    .c-card{
+      margin-right: 16px;
+
+      &:last-child{
+        margin-right: 0;
+      }
+    }
   }
 }

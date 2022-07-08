@@ -6,10 +6,16 @@ include layouts/_modules
 
 mixin platform-page 
   .platform-page.container
-      h1 Choose a 
-        span.name  
-        |  Plan
-      p.subtitle 
-      p 6/12
-      .platform-page__cards
-        +c-card 
+    h1 Choose a 
+      span.name  
+      |  Plan
+    p.subtitle 
+    +b-toggle
+    .platform-page__cards
+      +c-card 
+    +c-invite
+    
+    .btn-return
+      +b-button('--black') 
+        include ../assets/images/arrow-downsvg.svg
+        | Return back
