@@ -115,10 +115,6 @@
     p {
       display: none;
     }
-
-    img {
-      max-width: 344px;
-    }
   }
 
   .c-step {
@@ -376,7 +372,7 @@
   }
 
   .platform-page{
-    height: auto !important;
+    // height: auto;
   }
 
   .footer {
@@ -406,7 +402,7 @@
     flex-direction: column-reverse;
 
     img {
-      max-width: 180%;
+      width: 180%;
     }
 
     .info {

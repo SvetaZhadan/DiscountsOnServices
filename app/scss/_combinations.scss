@@ -23,12 +23,29 @@
     }
   }
 
-  img {
-    flex: 1;
+  .imgs{
     max-width: 588px;
-    height: auto;
-    border-radius: 32px;
+    height: 342px;
+    overflow: hidden;
+    flex: 1;
+    position: relative;
   }
+  img {
+    border-radius: 32px;
+    height: 342px;
+    object-fit: cover;
+    transition-duration: 0.3s;
+  }
+
+  .animation{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 588px;
+    height: 342px;
+    opacity: 0;
+  }
+  
 }
 
 .c-step {
@@ -82,7 +99,16 @@
     a {
       color: $color-blue;
       text-transform: uppercase;
-      text-decoration: underline;
+      // text-decoration: underline;
+      font-weight: 600;
+
+      &:hover{
+        color: $color-black-2;
+      }
+
+      &:active{
+        color: $color-black-1;
+      }
 
       svg {
         margin-left: 8px;

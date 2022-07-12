@@ -26,6 +26,7 @@ const info=[
     name: 'Netflix',
     description:'Netflix can be accessed via web browsers or via application software installed on smart TVs, set-top boxes connected to televisions, tablet computers, smartphones.',
     img:'../assets/images/ntflx.png',
+    animation: '../assets/images/ntflxAnimation.gif',
     subtitle:'Watch movies without limits at a bargain price',
     plans:[
       {
@@ -59,6 +60,7 @@ const info=[
     name: 'YouTube Premium',
     description:'The service provides ad-free access to content across the service, as well as access to premium YouTube',
     img:'../assets/images/ytb.png',
+    animation: '../assets/images/ytbAnimation.gif',
     subtitle:'Enjoy videos without limits at a bargain price',
     plans:[
       {
@@ -81,6 +83,7 @@ const info=[
     name: 'Spotify',
     description:'Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies.',
     img:'../assets/images/sptf.png',
+    animation: '../assets/images/sptfAnimation.gif',
     subtitle:'Listen your favorite music without limits at a bargain price',
     plans:[
       {
