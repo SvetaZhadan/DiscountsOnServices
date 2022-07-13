@@ -22,7 +22,7 @@ mixin header
         p DiscountsOnServices
       .header__content 
         nav 
-          a(href="#").header__sub(data-toggle) Subscriptions
+          span.header__sub(data-toggle) Subscriptions
             span.arrow
               include ../../assets/images/actions/arrow-down-s-line.svg
           span.toggle__popup
@@ -36,7 +36,7 @@ mixin header
           li 
             a(href="#") About
         div 
-          a(href="#")(data-toggle)  EN
+          span(data-toggle)  EN
             sapn.arrow
               include ../../assets/images/actions/arrow-down-s-line.svg
           span.toggle__popup
@@ -91,13 +91,13 @@ mixin footer
               include ../../assets/images/icons/whatsapp-fill.svg
             +b-iconButton('--white')
               include ../../assets/images/icons/telegram-fill.svg
-          a(href="#")(data-toggle)  EN
+          span(data-toggle)  EN
             sapn.arrow
               include ../../assets/images/actions/arrow-down-s-line.svg
-          //- span.toggle__popup
-          //-   a(href="#") English
-          //-   a(href="#") Ukraine
-          //-   a(href="#") Russian
+          span.toggle__popup
+            a(href="#") English
+            a(href="#") Ukraine
+            a(href="#") Russian
     .footer__row.container
       p Privacy Policy
       p Copyright 2021 © All Rights Reserved

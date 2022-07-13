@@ -20,116 +20,135 @@ import "../scss/index.scss";
 import { faqs, info } from "./sourse.js";
 //// ================================ Code ======================================
 
-const platformpage = document.querySelector(".platform-page");
-
+const platformPage = document.querySelector(".platform-page");
 const homePage = document.querySelector(".home-page");
-const toggle = platformpage.querySelector(".b-toggle");
-const btnReturn = platformpage.querySelector(".btn-return");
-const platformpageHeight = platformpage.clientHeight;
-platformpage.style.height = 0 + "px";
-const parent = document.querySelector(".home-page__choses");
+
+const items = {
+  toTop: document.querySelector("[data-scroll-top]"),
+};
+const platformItems = {
+  toggle: platformPage.querySelector(".b-toggle"),
+  btnReturn: platformPage.querySelector(".btn-return"),
+  cards: platformPage.querySelector(".platform-page__cards"),
+  height: platformPage.clientHeight,
+};
+
+const homeItems = {
+  choses: homePage.querySelector(".home-page__choses"),
+};
+
+items.toTop.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+platformPage.style.height = 0 + "px";
 
 info.forEach((item) => {
-  const cardTemp = parent.querySelector(".c-choose-temp");
+  const cardTemp = homeItems.choses.querySelector(".c-choose-temp");
   setCard(cardTemp, item, ".c-choose");
 });
 
-const chose = document.querySelectorAll(".c-choose");
+const cards = homeItems.choses.querySelectorAll(".c-choose");
 
-for (const key of chose) {
+for (const key of cards) {
   key.onmouseover = function () {
-    key.querySelector(".animation").style.opacity  = 1;
+    key.querySelector(".animation").style.opacity = 1;
     key.querySelector(".img").style.opacity = 0;
   };
   key.onmouseout = function () {
-    key.querySelector(".animation").style.opacity  = 0;
+    key.querySelector(".animation").style.opacity = 0;
     key.querySelector(".img").style.opacity = 1;
   };
 }
 
-const cards = parent.querySelectorAll(".c-choose");
 cards.forEach((card, i) => {
   const btn = card.querySelector(".b-button");
   btn.onclick = function () {
     homePage.style.display = "none";
-    platformpage.style.height = platformpageHeight + 620 + "px";
+    platformPage.style.height = platformItems.height + 620 + "px";
 
     setTimeout(() => {
-      platformpage.style.height = "auto";
+      platformPage.style.height = "auto";
     }, 300);
-    platformpage.classList.add("--active");
-    btnReturn.style.display = "block";
+    platformPage.classList.add("--active");
+    platformItems.btnReturn.style.display = "block";
 
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
 
-    const parent = document.querySelector(".platform-page__cards");
-    const cardTemp = parent.querySelector(".c-card-temp");
+    const cardTemp = platformItems.cards.querySelector(".c-card-temp");
 
-    platformpage.querySelector(".name").textContent = info[i].name;
-    platformpage.querySelector(".subtitle").textContent = info[i].subtitle;
+    platformPage.querySelector(".name").textContent = info[i].name;
+    platformPage.querySelector(".subtitle").textContent = info[i].subtitle;
 
     info[i].plans.forEach((item) => {
       setCard(cardTemp, item, ".c-card");
       if (item.newprice) {
-        toggle.style.display = "block";
+        platformItems.toggle.style.display = "block";
       }
 
-      console.log(item.items, 'items');
-      // platformpage.querySelector(".items").innerHTML= '<li>'+item.items+'</li>';
+      // console.log(item.items, "items");
 
       for (const key in item.items) {
         console.log(item.items[key]);
-
+        platformPage.querySelector(".items").innerHTML +=
+          "<li>" + item.items[key] + "</li>";
       }
-      // item.items.forEach(block=>{
-      //   console.log(block);
-      //   platformpage.querySelector(".items").textContent= block+'</br>';
-      // })
     });
   };
 });
 
-btnReturn.onclick = function () {
-  btnReturn.style.display = "none";
-  platformpage.style.height = 0 + "px";
-  toggle.style.display = "none";
-  platformpage.classList.remove("--active");
-  homePage.style.display = "block";
-  const parent = document.querySelector(".platform-page__cards");
+platformItems.btnReturn.onclick = function () {
+  platformItems.btnReturn.style.display = "none";
 
-  parent.querySelectorAll(".c-card").forEach((item) => {
+  platformPage.style.height = 0 + "px";
+  platformItems.toggle.style.display = "none";
+  platformPage.classList.remove("--active");
+  homePage.style.display = "block";
+
+  platformItems.cards.querySelectorAll(".c-card").forEach((item) => {
     item.remove();
-    if (toggle) {
-      toggle.classList.remove("--toggle");
-      toggle.querySelector(".b-toggle__input").checked = false;
+    if (platformItems.toggle) {
+      platformItems.toggle.classList.remove("--toggle");
+      platformItems.toggle.querySelector(".b-toggle__input").checked = false;
     }
   });
 
   window.scrollTo({
-    top: document.querySelector(".home-page__choses").offsetHeight - 300,
+    top: homeItems.choses.offsetHeight - 300,
   });
 };
 
-if (btnReturn) {
-  window.onscroll = function () {
+window.onscroll = function () {
+  if (platformItems.btnReturn) {
     if (document.body.scrollTop > 10) {
-      btnReturn.classList.add("--on-scroll");
+      platformItems.btnReturn.classList.add("--on-scroll");
     } else {
-      btnReturn.classList.remove("--on-scroll");
+      platformItems.btnReturn.classList.remove("--on-scroll");
     }
-  };
-}
-toggle.onchange = function () {
-  const cards = platformpage.querySelectorAll(".c-card");
+  }
 
-  if (toggle.classList.contains("--toggle")) {
-    toggle.classList.remove("--toggle");
+  if (document.body.scrollTop > 500) {
+    items.toTop.classList.add('--active');
+  }
+  else{
+    items.toTop.classList.remove('--active');
+  }
+};
+
+platformItems.toggle.onchange = function () {
+  const cards = platformPage.querySelectorAll(".c-card");
+
+  if (platformItems.toggle.classList.contains("--toggle")) {
+    platformItems.toggle.classList.remove("--toggle");
     changePrice(cards, "block", "none");
   } else {
-    toggle.classList.add("--toggle");
+    platformItems.toggle.classList.add("--toggle");
     changePrice(cards, "none", "block");
   }
 };
@@ -161,21 +180,23 @@ if (document.querySelector(".faqs")) {
   });
 }
 
-if (document.querySelector("header")) {
-  const datatoggle = document.querySelectorAll("[data-toggle]");
-  const burgerMenu = document.querySelectorAll("[data-burger-menu]");
-  const header = document.querySelector("header");
+const datatoggle = document.querySelectorAll("[data-toggle]");
+datatoggle.forEach((btn) => {
+  const block = btn.parentNode;
+  btn.onclick = function () {
+    block.classList.contains("--active")
+      ? block.classList.remove("--active")
+      : block.classList.add("--active");
+  };
+});
 
-  datatoggle.forEach((btn) => {
-    const block = btn.parentNode;
-    btn.onclick = function () {
-      block.classList.contains("--active")
-        ? block.classList.remove("--active")
-        : block.classList.add("--active");
-    };
-  });
+const header = document.querySelector("header");
+if (header) {
+  const headerItems = {
+    burgerMenu: header.querySelectorAll("[data-burger-menu]"),
+  };
 
-  burgerMenu.forEach((btn) => {
+  headerItems.burgerMenu.forEach((btn) => {
     btn.onclick = function () {
       header.classList.contains("--active")
         ? header.classList.remove("--active")

@@ -1,107 +1,98 @@
 /* ================================ Base ================================ */
 
-body{
+body {
   background-color: $color-background;
   font-family: Mulish, sans-serif;
 }
 
-p{
+p {
   @include text-style-paragraph;
 }
 
-a{
+a {
   @include text-style-paragraph;
   color: $color-black-1;
   transition-duration: 0.3s;
 
-  &:hover{
+  &:hover {
     color: $color-blue;
   }
 
-  &:active{
+  &:active {
     color: $color-blue-lght;
   }
 }
 
-svg{
-  
-  path{
+svg {
+  path {
     transition-duration: 0.3s;
   }
-
 }
 
-li{
+li {
   display: inline;
 }
 
-h1{
+h1 {
   @include text-style-heading-1;
 }
 
-h2{
+h2 {
   @include text-style-heading-2;
 }
 
-h3{
+h3 {
   @include text-style-heading-3;
 }
 
-h4{
+h4 {
   @include text-style-heading-4;
 }
 
-h5{
+h5 {
   @include text-style-heading-5;
 }
 
-h6{
+h6 {
   @include text-style-heading-6;
 }
 
-button{
+button {
   @include text-style-button;
 }
 
-.b-iconButton{
-
-  svg{
+.b-iconButton {
+  svg {
     width: 24px;
     height: 24px;
   }
 
-  &:hover{
-
-    svg{
-
-      path{
+  &:hover {
+    svg {
+      path {
         fill: $color-blue;
       }
     }
   }
 
-  &:active{
-
-    svg{
-
-      path{
+  &:active {
+    svg {
+      path {
         fill: $color-blue-lght;
       }
     }
   }
 
-  &.--white{
-
-    svg{
-
-      path{
+  &.--white {
+    svg {
+      path {
         fill: $color-white;
       }
     }
   }
 }
 
-.b-button{
+.b-button {
   @include text-style-button;
   color: $color-white;
   padding: 9px 0;
@@ -110,47 +101,46 @@ button{
   transition-duration: 0.3s;
   border: 1px solid transparent;
 
-  &:hover{
+  &:hover {
     color: $color-black-2;
     background-color: $color-white;
     border: 1px solid $color-blue;
   }
 
-  &:active{
+  &:active {
     color: $color-white;
     background-color: $color-blue-lght;
     border: 1px solid $color-blue-lght;
   }
 
-  &.--black{
-
+  &.--black {
     color: $color-white;
     background-color: $color-black-1;
 
-    &:hover{
+    &:hover {
       color: $color-black-1;
       background-color: $color-white;
       border: 1px solid $color-black-1;
     }
 
-    &:active{
+    &:active {
       color: $color-white;
       background-color: $color-gray;
       border: 1px solid $color-gray;
     }
   }
 
-  &.--white{    
+  &.--white {
     color: $color-black-2;
     background-color: $color-white;
     border: 1px solid $color-blue;
 
-    &:hover{
+    &:hover {
       color: $color-white;
       background-color: $color-blue;
     }
 
-    &:active{
+    &:active {
       color: $color-white;
       background-color: $color-blue-lght;
       border: 1px solid $color-blue-lght;
@@ -158,12 +148,12 @@ button{
   }
 }
 
-.container{
+.container {
   max-width: 1440px;
   margin: 0 auto;
 }
 
-$togglewidth:360px;
+$togglewidth: 360px;
 
 .b-toggle {
   position: relative;
@@ -193,7 +183,7 @@ $togglewidth:360px;
   &__slider::before {
     position: absolute;
     display: flex;
-    content: '';
+    content: "";
     width: 50%;
     height: 100%;
     background-color: $color-blue;
@@ -242,6 +232,47 @@ $togglewidth:360px;
 
     &-x2 {
       transition-duration: 0.3s;
+    }
+  }
+}
+
+.b-toTop {
+  background-color: $color-black-1;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 100%;
+  transition-duration: 0.3s;
+  position: fixed;
+  top: 80%;
+  right: 20px;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &.--active{
+    opacity: 1;
+    height: 40px;
+    width: 40px;
+  }
+
+  &:hover{
+    background-color: transparent;
+    border: 1px solid $color-black-1;
+
+    svg {
+  
+      path {
+        fill: $color-black-1;
+      }
+    }
+  }
+
+  svg {
+
+    transform: rotate(180deg);
+
+    path {
+      fill: $color-white;
     }
   }
 }

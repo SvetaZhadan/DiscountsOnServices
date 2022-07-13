@@ -456,7 +456,7 @@
   .footer {
 
     .toggle__popup {
-      top: 440px;
+      top: 30px;
       right: 0;
       flex-direction: row;
 
@@ -482,7 +482,7 @@
       &.--active {
 
         .toggle__popup {
-          top: 440px;
+          // top: 440px;
         }
       }
     }

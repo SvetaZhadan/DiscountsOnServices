@@ -29,8 +29,10 @@
   }
 
   [data-toggle]{
+    transition: 0.3s;
 
     &:hover{
+      color: $color-blue;
   
       svg{
         transform: rotate(90deg);
@@ -194,7 +196,7 @@
 
   .toggle__popup {
     position: absolute;
-    top: 198px;
+    top: 70px;
     display: flex;
     flex-direction: column;
     // flex-direction: row;
@@ -213,6 +215,8 @@
   }
 
   [data-toggle]{
+    color: $color-white;
+    cursor: pointer;
 
     &:hover{
   
@@ -305,9 +309,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    position: relative;
 
     &.--active{
-
 
       a {
           
