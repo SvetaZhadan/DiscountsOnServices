@@ -6,17 +6,17 @@ import "nouislider/dist/nouislider.css";
 import "../scss/index.scss";
 
 //js
-// import $ from 'jquery';
-// import Swiper from 'swiper';
-// import { Fancybox, Carousel, Panzoom } from '@fancyapps/ui';
-// import IMask from 'imask';
-// import Choices from 'choices.js';
-// import autoComplete from '@tarekraafat/autocomplete.js';
-// import validate from 'validate.js';
-// import ApexCharts from 'apexcharts';
-// import { rippleEffect, Ripple } from 'data-ripple';
-// import noUiSlider from 'nouislider';
-// import Scrollbar from 'smooth-scrollbar';
+import $ from "jquery";
+import Swiper from "swiper";
+import { Fancybox, Carousel, Panzoom } from "@fancyapps/ui";
+import IMask from "imask";
+import Choices from "choices.js";
+import autoComplete from "@tarekraafat/autocomplete.js";
+import validate from "validate.js";
+import ApexCharts from "apexcharts";
+import { rippleEffect, Ripple } from "data-ripple";
+import noUiSlider from "nouislider";
+import Scrollbar from "smooth-scrollbar";
 import { faqs, info } from "./sourse.js";
 //// ================================ Code ======================================
 
@@ -25,7 +25,9 @@ const homePage = document.querySelector(".home-page");
 
 const items = {
   toTop: document.querySelector("[data-scroll-top]"),
+  togglePopup: document.querySelectorAll("[data-toggle]"),
 };
+
 const platformItems = {
   toggle: platformPage.querySelector(".b-toggle"),
   btnReturn: platformPage.querySelector(".btn-return"),
@@ -94,11 +96,11 @@ cards.forEach((card, i) => {
 
       // console.log(item.items, "items");
 
-      for (const key in item.items) {
-        console.log(item.items[key]);
-        platformPage.querySelector(".items").innerHTML +=
-          "<li>" + item.items[key] + "</li>";
-      }
+      // for (const key in item.items) {
+      //   console.log(item.items[key]);
+      //   platformPage.querySelector(".items").innerHTML +=
+      //     "<li>" + item.items[key] + "</li>";
+      // }
     });
   };
 });
@@ -134,10 +136,9 @@ window.onscroll = function () {
   }
 
   if (document.body.scrollTop > 500) {
-    items.toTop.classList.add('--active');
-  }
-  else{
-    items.toTop.classList.remove('--active');
+    items.toTop.classList.add("--active");
+  } else {
+    items.toTop.classList.remove("--active");
   }
 };
 
@@ -154,6 +155,7 @@ platformItems.toggle.onchange = function () {
 };
 
 if (document.querySelector(".faqs")) {
+
   faqs.forEach((item) => {
     const parent = document.querySelector(".faq");
     const catdTemp = parent.querySelector(".c-faqs-temp");
@@ -165,9 +167,10 @@ if (document.querySelector(".faqs")) {
   accordion.forEach((item) => {
     const quest = item.querySelector(".question").parentNode;
     const answ = item.querySelector(".answer");
-
     const height = answ.clientHeight;
+
     answ.style.height = 0 + "px";
+
     quest.onclick = function () {
       if (item.classList.contains("--active")) {
         item.classList.remove("--active");
@@ -180,14 +183,28 @@ if (document.querySelector(".faqs")) {
   });
 }
 
-const datatoggle = document.querySelectorAll("[data-toggle]");
-datatoggle.forEach((btn) => {
+// const datatoggle = document.querySelectorAll("[data-toggle]");
+items.togglePopup.forEach((btn) => {
   const block = btn.parentNode;
   btn.onclick = function () {
     block.classList.contains("--active")
       ? block.classList.remove("--active")
       : block.classList.add("--active");
   };
+
+  // const popup = document.querySelector(".toggle__popup");
+
+  // document.onclick = function (e) {
+  //   console.log(e.target);
+  //   console.log(btn, 'btn');
+
+  //   if (e.target != btn) {
+  //     block.classList.remove("--active")
+  //   }
+  //   else{
+  //     block.classList.add("--active");
+  //   }
+  // };
 });
 
 const header = document.querySelector("header");
