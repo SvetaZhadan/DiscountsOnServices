@@ -1,21 +1,27 @@
 include layouts/_base
 include layouts/_combinations
 include layouts/_modules
+
 +m-head('Home page')
 
-mixin home-page
-  .home-page.container
-    +m-baner 
++header
+.home-page.container
+  +m-baner 
 
-    .home-page__choses
-      h2 Choose a subscription
-      +c-choose
+  .home-page__choses
+    h2 Choose a subscription
+    +c-choose
 
-    .home-page__steps
-      h2 How it works?
-      +m-steps
-      +c-invite
+  .home-page__steps
+    h2 How it works?
+    +m-steps
+    +c-invite
 
-    .home-page__about 
-      h2 About us
-      +m-about
+  .home-page__about 
+    h2 About us
+    +m-about
+  .home-page__faq
+    +m-faqs
+  +b-toTop
+
++footer

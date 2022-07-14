@@ -61,7 +61,7 @@ const info=[
     description:'The service provides ad-free access to content across the service, as well as access to premium YouTube',
     img:'../assets/images/ytb.png',
     animation: '../assets/images/ytbAnimation.gif',
-    subtitle:'Enjoy videos without limits at a bargain price',
+    subtitle:'Select the subscription type for a period of 12 months:',
     plans:[
       {
         name:'Music',
@@ -84,7 +84,7 @@ const info=[
     description:'Spotify offers digital copyright restricted recorded music and podcasts, including more than 82 million songs, from record labels and media companies.',
     img:'../assets/images/sptf.png',
     animation: '../assets/images/sptfAnimation.gif',
-    subtitle:'Listen your favorite music without limits at a bargain price',
+    subtitle:'Select the subscription type for a period of 12 months:',
     plans:[
       {
         name:'Individual',

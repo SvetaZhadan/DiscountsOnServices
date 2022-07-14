@@ -1,12 +1,8 @@
 include layouts/_base
 include layouts/_combinations
 include layouts/_modules
-include home
-include platform
+
 +m-head('index')
-+header
-+home-page
-+platform-page 
-+m-faqs
-+footer
-+b-toTop
+a(href="pages/home.html") home
+br
+a(href="pages/platform.html") platform

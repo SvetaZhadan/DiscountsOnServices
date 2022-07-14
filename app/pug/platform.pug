@@ -3,19 +3,23 @@ include layouts/_combinations
 include layouts/_modules
 
 +m-head('Platform')
++header
 
-mixin platform-page 
-  .platform-page.container
-    h1 Choose a 
-      span.name  
-      |  Plan
-    p.subtitle 
-    +b-toggle
-    .platform-page__cards
-      +c-card 
-    +c-invite
-    
-    .btn-return
-      +b-button('--black') 
-        include ../assets/images/arrow-downsvg.svg
-        | Return back
+.platform-page.container
+  h1 Choose a 
+    span.name  
+    |  Plan
+  p.subtitle 
+  +b-toggle
+  .platform-page__cards
+    +c-card 
+  +c-invite
+  
+  .btn-return
+    +b-button('--black', 'home.html') 
+      include ../assets/images/arrow-downsvg.svg
+      | Return back
+  .platform-page__faq
+    +m-faqs
+  +b-toTop
++footer

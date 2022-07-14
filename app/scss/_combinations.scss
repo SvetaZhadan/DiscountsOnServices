@@ -227,12 +227,13 @@
       position: absolute;
       bottom: 0;
       left: 0;
+      margin-left: -20px;
     }
   }
 
   .price {
     // margin-bottom: 16px;
-    margin-left: 13px;
+    // margin-left: 13px;
     font-size: 50px;
     font-weight: 700;
   }
@@ -240,7 +241,7 @@
   .newprice {
     display: none;
     margin-bottom: 0;
-    margin-left: 13px;
+    // margin-left: 13px;
     font-size: 50px;
   }
 }

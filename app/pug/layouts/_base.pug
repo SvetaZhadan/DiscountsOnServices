@@ -2,9 +2,10 @@ mixin b-iconButton(className)
   a(href='#' class=className).b-iconButton
     block
 
-mixin b-button(className)
+mixin b-button(className, link='#')
   button.b-button(class=className)
-    block
+    a(href=link)
+      block
 
 mixin b-toggle
   label.b-toggle
