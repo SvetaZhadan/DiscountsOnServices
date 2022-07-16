@@ -1,17 +1,13 @@
 /* ================================ Media ================================ */
 @media (max-width: 1280px) {
-
   .header {
-
     &__logo {
       margin-right: 16px;
     }
   }
 
   .c-invite {
-
     div {
-
       p {
         width: auto;
       }
@@ -19,12 +15,9 @@
   }
 }
 
-@media (max-width: 1024px) {
-  
+@media (max-width: 1100px) {
   .header {
-
     &__logo {
-
       svg {
         width: 32px;
         height: 32px;
@@ -40,7 +33,7 @@
     }
 
     &.--active {
-
+      padding: 20px 0;
       .header__burger {
         display: none;
       }
@@ -50,6 +43,7 @@
       }
 
       .header__content {
+        z-index: 1;
         position: absolute;
         display: flex;
         width: 90%;
@@ -73,7 +67,6 @@
   }
 
   .home-page {
-
     h2 {
       margin-bottom: 32px;
     }
@@ -88,7 +81,6 @@
   }
 
   .c-faqs {
-
     div {
       align-items: flex-start;
     }
@@ -107,7 +99,6 @@
   }
 
   .c-choose {
-
     .info {
       padding: 49px 28px 48px 32px;
     }
@@ -126,7 +117,6 @@
     }
 
     &__img {
-
       img {
         width: 88px;
         height: 88px;
@@ -135,7 +125,6 @@
   }
 
   .m-about {
-
     div {
       height: 412px;
     }
@@ -155,16 +144,14 @@
     }
   }
 
-  .platform-page{
-
-    .c-card{
+  .platform-page {
+    .c-card {
       height: 412px;
       padding: 37px 16px;
     }
   }
 
   .footer {
-
     &__logo {
       margin-right: 50px;
 
@@ -185,12 +172,10 @@
   }
 }
 
-@media (max-width: 850px) {
-
+@media (max-width: 950px) {
   .header {
-
     &.--active {
-
+      padding: 5px 0;
       .header__content {
         position: absolute;
         top: 40px;
@@ -342,43 +327,41 @@
     }
   }
 
-  .platform-page__cards{
+  .platform-page__cards {
     flex-direction: column;
     margin-top: 28px;
     margin-bottom: 16px;
 
-    .c-card{
+    .c-card {
       height: 333px;
       margin-right: 0 !important;
       margin-bottom: 16px;
 
-      &:last-child{
+      &:last-child {
         margin-bottom: 0;
       }
 
-      ul{
+      ul {
         margin-bottom: 48px;
       }
 
-      .sign{
+      .sign {
         margin-bottom: 12px;
       }
 
-      .b-button{
+      .b-button {
         padding: 14px 0;
         font-size: 16px;
       }
-    }  
+    }
   }
 
-  .platform-page{
+  .platform-page {
     // height: auto;
   }
 
   .footer {
-
     &__contant {
-
       &-wrapper {
         width: 100%;
       }
@@ -387,13 +370,20 @@
 }
 
 @media (max-width: 570px) {
-
   .header {
-
     &__logo {
-
       p {
         display: none;
+      }
+    }
+  }
+
+  .m-baner,
+  .m-about {
+    &__img {
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   }
@@ -425,7 +415,6 @@
   }
 
   .c-faqs {
-
     h6 {
       margin-right: 21px;
       font-size: 17px;
@@ -437,24 +426,24 @@
   }
 
   .home-page {
-
     &__faqs {
-
       .b-button {
         margin-top: 28px;
       }
     }
   }
 
-  .platform-page{
+  // $togglewidth: 320px;
 
-    .b-toggle{
-      width: 100%;
+  .b-toggle {
+    width: 320;
+
+    &__input:checked + &__slider::before {
+      transform: translateX(160px);
     }
   }
 
   .footer {
-
     .toggle__popup {
       top: 30px;
       right: 0;
@@ -480,7 +469,6 @@
       }
 
       &.--active {
-
         .toggle__popup {
           // top: 440px;
         }

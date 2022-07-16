@@ -1,5 +1,5 @@
 import { info } from "./sourse.js";
-import { makeClone, setCard } from "./functions.js";
+import { setCard } from "./functions.js";
 
 export default function homePage() {
   if (document.querySelector(".home-page")) {
@@ -7,7 +7,6 @@ export default function homePage() {
     const homeItems = {
       choses: homePage.querySelector(".home-page__choses"),
     };
-
     const chosesItems = {
       template: homeItems.choses.querySelector(".c-choose-temp"),
     };

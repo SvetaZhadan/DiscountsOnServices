@@ -18,19 +18,41 @@ import { rippleEffect, Ripple } from "data-ripple";
 import noUiSlider from "nouislider";
 import Scrollbar from "smooth-scrollbar";
 import { faqs, info } from "./sourse.js";
+import ClipboardJS from "clipboard";
 import { platformPage } from "./platform";
 import { homePage } from "./home";
 import { showFaqs } from "./faqs";
+import { logIn } from "./login";
+
 
 //// ================================ Code ======================================
 platformPage();
 homePage();
 showFaqs();
+logIn();
 
 const initItems = {
   toTop: document.querySelector("[data-scroll-top]"),
   togglePopup: document.querySelectorAll("[data-toggle]"),
   btnReturn: document.querySelector(".btn-return"),
+  platformItems: document.querySelectorAll("[data-platform-items]"),
+  invite: document.querySelector(".c-invite"),
+};
+
+const link = initItems.invite.querySelector(".c-invite__link-copy");
+const copyPopup = document.querySelector(".m-popup-copy");
+new ClipboardJS(".c-invite__link-copy");
+
+link.onclick = function () {
+  copyPopup.classList.add("--active");
+
+  setTimeout(() => {
+    copyPopup.classList.remove("--active");
+  }, 2000);
+};
+
+copyPopup.onclick = function () {
+  copyPopup.classList.remove("--active");
 };
 
 initItems.toTop.onclick = function () {
@@ -39,66 +61,6 @@ initItems.toTop.onclick = function () {
     behavior: "smooth",
   });
 };
-
-// cards.forEach((card, i) => {
-//   const btn = card.querySelector(".b-button");
-//   btn.onclick = function () {
-//     homePage.style.display = "none";
-//     platformPage.style.height = platformItems.height + 620 + "px";
-
-//     setTimeout(() => {
-//       platformPage.style.height = "auto";
-//     }, 300);
-//     platformPage.classList.add("--active");
-//     platformItems.btnReturn.style.display = "block";
-
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//     });
-
-//     const cardTemp = platformItems.cards.querySelector(".c-card-temp");
-
-//     platformPage.querySelector(".name").textContent = info[i].name;
-//     platformPage.querySelector(".subtitle").textContent = info[i].subtitle;
-
-//     info[i].plans.forEach((item) => {
-//       setCard(cardTemp, item, ".c-card");
-//       if (item.newprice) {
-//         platformItems.toggle.style.display = "block";
-//       }
-
-//       // console.log(item.items, "items");
-
-//       // for (const key in item.items) {
-//       //   console.log(item.items[key]);
-//       //   platformPage.querySelector(".items").innerHTML +=
-//       //     "<li>" + item.items[key] + "</li>";
-//       // }
-//     });
-//   };
-// });
-
-// platformItems.btnReturn.onclick = function () {
-//   platformItems.btnReturn.style.display = "none";
-
-//   platformPage.style.height = 0 + "px";
-//   platformItems.toggle.style.display = "none";
-//   platformPage.classList.remove("--active");
-//   homePage.style.display = "block";
-
-//   platformItems.cards.querySelectorAll(".c-card").forEach((item) => {
-//     item.remove();
-//     if (platformItems.toggle) {
-//       platformItems.toggle.classList.remove("--toggle");
-//       platformItems.toggle.querySelector(".b-toggle__input").checked = false;
-//     }
-//   });
-
-//   window.scrollTo({
-//     top: homeItems.choses.offsetHeight - 300,
-//   });
-// };
 
 window.onscroll = function () {
   if (document.body.scrollTop > 500) {
@@ -114,48 +76,6 @@ window.onscroll = function () {
   }
 };
 
-// platformItems.toggle.onchange = function () {
-//   const cards = platformPage.querySelectorAll(".c-card");
-
-//   if (platformItems.toggle.classList.contains("--toggle")) {
-//     platformItems.toggle.classList.remove("--toggle");
-//     changePrice(cards, "block", "none");
-//   } else {
-//     platformItems.toggle.classList.add("--toggle");
-//     changePrice(cards, "none", "block");
-//   }
-// };
-
-// if (document.querySelector(".faqs")) {
-
-//   faqs.forEach((item) => {
-//     const parent = document.querySelector(".faq");
-//     const catdTemp = parent.querySelector(".c-faqs-temp");
-//     setCard(catdTemp, item, ".c-faqs");
-//   });
-
-//   const accordion = document.querySelectorAll(".c-faqs");
-
-//   accordion.forEach((item) => {
-//     const quest = item.querySelector(".question").parentNode;
-//     const answ = item.querySelector(".answer");
-//     const height = answ.clientHeight;
-
-//     answ.style.height = 0 + "px";
-
-//     quest.onclick = function () {
-//       if (item.classList.contains("--active")) {
-//         item.classList.remove("--active");
-//         answ.style.height = 0 + "px";
-//       } else {
-//         item.classList.add("--active");
-//         answ.style.height = height + "px";
-//       }
-//     };
-//   });
-// }
-
-// // const datatoggle = document.querySelectorAll("[data-toggle]");
 initItems.togglePopup.forEach((btn) => {
   const block = btn.parentNode;
   btn.onclick = function () {
@@ -163,12 +83,22 @@ initItems.togglePopup.forEach((btn) => {
       ? block.classList.remove("--active")
       : block.classList.add("--active");
   };
+
+  window.addEventListener('click', e => {
+    const target = e.target
+    if (!target.closest('[data-toggle]')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
+      block.classList.remove("--active")// то закрываем окно навигации, удаляя активный класс
+    }
+  })
 });
+
+
 
 const header = document.querySelector("header");
 if (header) {
   const headerItems = {
     burgerMenu: header.querySelectorAll("[data-burger-menu]"),
+    nav: header.querySelector("nav"),
   };
 
   headerItems.burgerMenu.forEach((btn) => {
@@ -177,5 +107,16 @@ if (header) {
         ? header.classList.remove("--active")
         : header.classList.add("--active");
     };
+  });
+
+  const anchors = headerItems.nav.querySelectorAll("a[href*='#']");
+
+  anchors.forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
   });
 }

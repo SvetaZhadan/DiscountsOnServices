@@ -25,16 +25,16 @@ mixin header
           span.header__sub(data-toggle) Subscriptions
             span.arrow
               include ../../assets/images/actions/arrow-down-s-line.svg
-          span.toggle__popup
-            a(href="#") Netflix
-            a(href="#") YouTube Premium
-            a(href="#") Spotify
+          span.toggle__popup(data-platform-items)
+            a(href="platform.html#0") Netflix
+            a(href="platform.html#1") YouTube Premium
+            a(href="platform.html#1") Spotify
           li 
-            a(href="#") FAQ
+            a(href="#howworks") How it works?
           li 
-            a(href="#") Support
+            a(href="#about") About
           li 
-            a(href="#") About
+            a(href="#support") Support
         div 
           span(data-toggle)  EN
             sapn.arrow
@@ -48,14 +48,14 @@ mixin header
               include ../../assets/images/icons/whatsapp-fill.svg
             +b-iconButton
               include ../../assets/images/icons/telegram-fill.svg
-
-          +b-button Log in
+          +b-button('btn-log-in') Log in
       .header__burger(data-burger-menu)
         +b-iconButton 
           include ../../assets/images/actions/burger.svg
       .header__close(data-burger-menu)
         +b-iconButton 
           include ../../assets/images/actions/close-fill.svg
+    +m-log-in-popup 
 
 mixin footer 
   footer.footer 
@@ -69,13 +69,13 @@ mixin footer
         .footer__content-wrapper
           div
             p Subscriptions
-            ul 
+            ul(data-platform-items)
               li 
-                a(href="#") Netflix
+                a(href="platform.html#0") Netflix
               li 
-                a(href="#") YouTube Premium
+                a(href="platform.html#1") YouTube Premium
               li  
-                a(href="#") Spotify        
+                a(href="platform.html#2") Spotify        
           div
             p Site navigation
             ul 
@@ -135,6 +135,39 @@ mixin m-faqs
       +c-faqs 
     +b-button('--black') Support
 
+mixin m-popup-copy
+  .m-popup-copy
+    p
+      include ../../assets/images/copy.svg
+      | Ссылка скопирована
+
+mixin m-log-in-popup 
+  .m-log-in-popup(data-log-in-popup)
+    .popup
+      h2 Log in
+      p New user? 
+        span(create-account) Create an account
+      form
+        +b-input('Email Address', '','Enter your e-mail')
+        +b-input('Password','password','Enter your password', 'password')
+        div 
+          a(href='#') Forgot password?
+          +b-button('blue') Log in
+      
+      .sign-with 
+        hr
+        p Or sign in with
+        hr
+      div.buttons__wrapper
+        +b-login-with
+          include ../../assets/images/icons/google.svg
+        +b-login-with
+          include ../../assets/images/icons/facebook.svg
+        +b-login-with
+          include ../../assets/images/icons/apple.svg
+      p.protected-by Protected by reCAPTCHA and subject to the Google Privacy Policy and Terms of Service.
+
+    
 
 
 

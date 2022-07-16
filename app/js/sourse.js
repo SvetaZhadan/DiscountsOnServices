@@ -51,7 +51,7 @@ const info=[
           'Premium Ad-free music listening','Play anywhere - even offline','On-demand playback' 
         ],
         halfyearprice:80,
-        fullyearprice:150,//year price
+        fullyearprice:150,
       },
     ]
   },

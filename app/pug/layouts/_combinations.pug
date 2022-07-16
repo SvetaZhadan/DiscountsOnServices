@@ -19,11 +19,12 @@ mixin c-step(title, text, src)
 
 mixin c-invite
   .c-invite
+    input(type='hidden' class="link" value="here will be link on web-site")
     div
       h3 Invite friends
       p Starting today up to 50% for NETFLIX, YOUTUBE, SPOTIFY subscriptions with a secure payment from PAYPAL
     .c-invite__link Click on the link <br>
-      a(href='#') Discounts On Services
+      a(data-clipboard-target=".link").c-invite__link-copy Discounts On Services
         include ../../assets/images/file-copy-line.svg
 
 mixin c-faqs 

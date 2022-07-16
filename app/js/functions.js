@@ -9,7 +9,6 @@ function setCard(template, item, card) {
 
   for (const key of keys) {
     const element = content.querySelector(`.${key}`);
-
     if (element) {
       if (key === "img" || key === "animation") {
         element.src = item[key];
@@ -19,4 +18,20 @@ function setCard(template, item, card) {
   }
   template.parentElement.appendChild(content);
 }
-export { makeClone, setCard };
+
+function layOut() {
+  const layout = document.querySelector(".layout");
+  const active = document.querySelectorAll(".--active");
+  document.body.classList.add('--no-scroll');
+
+  layout.classList.add("--active");
+
+  layout.onclick = function () {
+    document.body.classList.remove('--no-scroll');
+    layout.classList.remove("--active");
+    active.forEach((item) => {
+      item.classList.remove("--active");
+    });
+  };
+}
+export { setCard, layOut };

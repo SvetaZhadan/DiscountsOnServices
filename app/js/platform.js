@@ -1,10 +1,11 @@
-import { makeClone, setCard } from "./functions.js";
+import { setCard } from "./functions.js";
 import { info } from "./sourse.js";
 
 export default function platformPage() {
   if (document.querySelector(".platform-page")) {
-    const url=window.location.href;
-    const platformNum = url.split('#').pop();
+    const url = window.location.href;
+    let platformNum = url.split("#").pop();
+    platformNum == url ? (platformNum = 0) : "";
 
     const platformPage = document.querySelector(".platform-page");
     const platformItems = {
