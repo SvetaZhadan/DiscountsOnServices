@@ -93,10 +93,8 @@ button {
 }
 
 .b-button {
-  a {
-    color: $color-white;
-    transition-duration: 0.3s;
-  }
+
+  color: $color-white;
   @include text-style-button;
   padding: 9px 0;
   background-color: $color-blue;
@@ -105,63 +103,57 @@ button {
   border: 1px solid transparent;
 
   &:hover {
-    a {
-      color: $color-white;
-    }
+
+    color: $color-blue;
 
     background-color: $color-white;
     border: 1px solid $color-blue;
   }
 
   &:active {
-    a {
-      color: $color-white;
-    }
+
+    color: $color-white;
     background-color: $color-blue-lght;
     border: 1px solid $color-blue-lght;
   }
 
   &.--black {
-    a {
-      color: $color-white;
-    }
+
+    color: $color-white;
     background-color: $color-black-1;
 
     &:hover {
-      a {
-        color: $color-black-1;
-      }
+
+      color: $color-black-1;
       background-color: $color-white;
       border: 1px solid $color-black-1;
     }
 
     &:active {
-      a {
-        color: $color-white;
-      }
+
+      color: $color-white;
       background-color: $color-gray;
       border: 1px solid $color-gray;
     }
   }
 
   &.--white {
-    a {
-      color: $color-black-2;
-    }
+
+    color: $color-black-2;
     background-color: $color-white;
     border: 1px solid $color-blue;
 
     &:hover {
-      a {
-        color: $color-white;
-      }
+
+      color: $color-white;
       background-color: $color-blue;
+      border: 1px solid $color-white;
+
     }
 
     &:active {
-      a {
-        color: $color-white;
-      }
+
+      color: $color-white;
       background-color: $color-blue-lght;
       border: 1px solid $color-blue-lght;
     }

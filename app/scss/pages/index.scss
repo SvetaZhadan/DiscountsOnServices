@@ -1,0 +1,14 @@
+.index-page{
+
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 0 auto;
+    
+    a{
+      text-align: center;
+      font-size: 32px;
+    }
+  }
+}

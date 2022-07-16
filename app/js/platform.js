@@ -3,10 +3,9 @@ import { info } from "./sourse.js";
 
 export default function platformPage() {
   if (document.querySelector(".platform-page")) {
-    const currentInfo = sessionStorage.getItem("currentObj");
-    const currentPlatform = JSON.parse(currentInfo);
+    const url=window.location.href;
+    const platformNum = url.split('#').pop();
 
-    console.log(currentPlatform);
     const platformPage = document.querySelector(".platform-page");
     const platformItems = {
       toggle: platformPage.querySelector(".b-toggle"),
@@ -17,32 +16,37 @@ export default function platformPage() {
       subtitle: platformPage.querySelector(".subtitle"),
     };
 
-    platformItems.title.textContent = currentPlatform.name;
-    platformItems.subtitle.textContent = currentPlatform.subtitle;
+    platformItems.title.textContent = info[platformNum].name;
+    platformItems.subtitle.textContent = info[platformNum].subtitle;
 
-    currentPlatform.plans.forEach((plan) => {
+    info[platformNum].plans.forEach((plan) => {
       const cardTemp = platformItems.cardsBlock.querySelector(".c-card-temp");
       setCard(cardTemp, plan, ".c-card");
 
-      if (plan.newprice) {
+      if (plan.halfyearprice) {
         platformItems.toggle.style.display = "block";
+        const cards = platformPage.querySelectorAll(".c-card");
+        cards.forEach((card) => {
+          card.querySelector(".fullyearprice").style.display = "none";
+          card.querySelector(".halfyearprice").style.display = "block";
+        });
       }
     });
-    
+
     platformItems.toggle.onchange = function () {
       const cards = platformPage.querySelectorAll(".c-card");
 
       if (platformItems.toggle.classList.contains("--toggle")) {
         platformItems.toggle.classList.remove("--toggle");
         cards.forEach((card) => {
-          card.querySelector(".price").style.display = "block";
-          card.querySelector(".newprice").style.display = "none";
+          card.querySelector(".fullyearprice").style.display = "block";
+          card.querySelector(".halfyearprice").style.display = "none";
         });
       } else {
         platformItems.toggle.classList.add("--toggle");
         cards.forEach((card) => {
-          card.querySelector(".price").style.display = "none";
-          card.querySelector(".newprice").style.display = "block";
+          card.querySelector(".fullyearprice").style.display = "none";
+          card.querySelector(".halfyearprice").style.display = "block";
         });
       }
     };

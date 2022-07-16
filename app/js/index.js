@@ -156,28 +156,14 @@ window.onscroll = function () {
 // }
 
 // // const datatoggle = document.querySelectorAll("[data-toggle]");
-// items.togglePopup.forEach((btn) => {
-//   const block = btn.parentNode;
-//   btn.onclick = function () {
-//     block.classList.contains("--active")
-//       ? block.classList.remove("--active")
-//       : block.classList.add("--active");
-//   };
-
-//   // const popup = document.querySelector(".toggle__popup");
-
-//   // document.onclick = function (e) {
-//   //   console.log(e.target);
-//   //   console.log(btn, 'btn');
-
-//   //   if (e.target != btn) {
-//   //     block.classList.remove("--active")
-//   //   }
-//   //   else{
-//   //     block.classList.add("--active");
-//   //   }
-//   // };
-// });
+initItems.togglePopup.forEach((btn) => {
+  const block = btn.parentNode;
+  btn.onclick = function () {
+    block.classList.contains("--active")
+      ? block.classList.remove("--active")
+      : block.classList.add("--active");
+  };
+});
 
 const header = document.querySelector("header");
 if (header) {

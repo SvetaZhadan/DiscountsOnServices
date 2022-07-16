@@ -34,24 +34,24 @@ const info=[
         items:[
           'Ad-free music listening','Play anywhere - even offline','On-demand playback' 
         ],
-        price:45,
-        newprice:80,
+        halfyearprice:45,
+        fullyearprice:80,
       },
       {
         name:'Standart',
         items:[
           'Standart Ad-free music listening','Play anywhere - even offline','On-demand playback' 
         ],
-        price:60,
-        newprice:110,
+        halfyearprice:60,
+        fullyearprice:110,
       },
       {
         name:'Premium',
         items:[
           'Premium Ad-free music listening','Play anywhere - even offline','On-demand playback' 
         ],
-        price:80,
-        newprice:150,//year price
+        halfyearprice:80,
+        fullyearprice:150,//year price
       },
     ]
   },
@@ -68,14 +68,14 @@ const info=[
         items:[
           'Listen to music without ads, in the background and offline',
         ],
-        price:60,
+        fullyearprice:60,
       },
       {
         name:'Premium',
         items:[
           'YouTube and YouTube Music without ads, in the background and offline',
         ],
-        price:80,
+        fullyearprice:80,
       },
     ]
   },
@@ -91,21 +91,21 @@ const info=[
         items:[
           'Ad-free music listening','Play anywhere - even offline','On-demand playback' 
         ],
-        price:47,
+        fullyearprice:47,
       },
       {
         name:'Duo',
         items:[
           '2 Premium accounts for a couple under one roof','Ad-free music listening, play offline, on-demand playback',
         ],
-        price:57,
+        fullyearprice:57,
       },
       {
         name:'Family',
         items:[
           '6 Premium accounts for family members living under one roof','Block explicit music','Ad-free music listening, play offline, on-demand playback', 
         ],
-        price:77,
+        fullyearprice:77,
       },
     ]
   },

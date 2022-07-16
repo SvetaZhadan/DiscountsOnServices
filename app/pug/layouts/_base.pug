@@ -3,12 +3,12 @@ mixin b-iconButton(className)
     block
 
 mixin b-button(className, link='#')
-  button.b-button(class=className)
-    a(href=link)
+  a(href=link)
+    button.b-button(class=className)
       block
 
 mixin b-toggle
-  label.b-toggle
+  label.b-toggle.--toggle
     input.b-toggle__input(type="checkbox")
     span.b-toggle__slider.--round
       span.b-toggle__container

@@ -18,7 +18,7 @@ export default function homePage() {
 
     const cards = homeItems.choses.querySelectorAll(".c-choose");
 
-    cards.forEach((card,i)=>{
+    cards.forEach((card, i) => {
       card.onmouseover = function () {
         card.querySelector(".animation").style.opacity = 1;
         card.querySelector(".img").style.opacity = 0;
@@ -29,19 +29,13 @@ export default function homePage() {
       };
 
       const btn = card.querySelector(".b-button");
+      let url = btn.parentNode.href;
+
       btn.onclick = function () {
-       const currentInfo=JSON.stringify(info[i]);
-       console.log(JSON.stringify(info[i]));
-       sessionStorage.setItem('currentObj', currentInfo);
+        btn.parentNode.href = url + "#" + i;
       };
-    })
-    // const obj='name'
-    // console.log(obj, 'home');
-    // sessionStorage.setItem('testObj', obj);
+    });
   }
-
-
 }
 
 export { homePage };
-

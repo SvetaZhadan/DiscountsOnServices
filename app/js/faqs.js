@@ -10,13 +10,17 @@ export default function showFaqs() {
     });
     
     const accordion = document.querySelectorAll(".c-faqs");
-
-    accordion.forEach((item) => {
+    accordion.forEach((item, i) => {
+     
       const quest = item.querySelector(".question").parentNode;
       const answ = item.querySelector(".answer");
       const height = answ.clientHeight;
 
-      answ.style.height = 0 + "px";
+      answ.style.height = 0 + "px";      
+      if (i==0) {
+        item.classList.add("--active");
+        answ.style.height = height + "px";
+      }
 
       quest.onclick = function () {
         if (item.classList.contains("--active")) {
