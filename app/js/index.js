@@ -23,13 +23,14 @@ import { platformPage } from "./platform";
 import { homePage } from "./home";
 import { showFaqs } from "./faqs";
 import { logIn } from "./login";
-
+import { form } from "./form";
 
 //// ================================ Code ======================================
 platformPage();
 homePage();
 showFaqs();
 logIn();
+form();
 
 const initItems = {
   toTop: document.querySelector("[data-scroll-top]"),
@@ -84,15 +85,14 @@ initItems.togglePopup.forEach((btn) => {
       : block.classList.add("--active");
   };
 
-  window.addEventListener('click', e => {
-    const target = e.target
-    if (!target.closest('[data-toggle]')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
-      block.classList.remove("--active")// то закрываем окно навигации, удаляя активный класс
+  window.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!target.closest("[data-toggle]")) {
+      // если этот элемент или его родительские элементы не окно навигации и не кнопка
+      block.classList.remove("--active"); // то закрываем окно навигации, удаляя активный класс
     }
-  })
+  });
 });
-
-
 
 const header = document.querySelector("header");
 if (header) {

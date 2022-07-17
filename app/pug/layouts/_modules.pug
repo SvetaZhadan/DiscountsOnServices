@@ -146,9 +146,9 @@ mixin m-log-in-popup
     .popup
       h2 Log in
       p New user? 
-        span(create-account) Create an account
+        a(href='#')(create-account) Create an account
       form
-        +b-input('Email Address', '','Enter your e-mail')
+        +b-input('Email Address', 'name','Enter your e-mail')
         +b-input('Password','password','Enter your password', 'password')
         div 
           a(href='#') Forgot password?
@@ -165,84 +165,7 @@ mixin m-log-in-popup
           include ../../assets/images/icons/facebook.svg
         +b-login-with
           include ../../assets/images/icons/apple.svg
-      p.protected-by Protected by reCAPTCHA and subject to the Google Privacy Policy and Terms of Service.
-
-    
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+      p.protected-by Protected by reCAPTCHA and subject to the 
+        a(href='#') Google Privacy Policy 
+        | and 
+        a(href='#') Terms of Service

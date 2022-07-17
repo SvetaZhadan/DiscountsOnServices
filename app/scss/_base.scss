@@ -301,14 +301,15 @@ $togglewidth: 360px;
 
   input {
     margin-top: 9px;
-    background: $color-gray-300;
+    background: $color-gray-200;
     border-radius: 12px;
     padding: 16px 24px;
-    border: 1px solid transparent;
+    border: 1px solid $color-gray-200;
     transition-duration: 0.3s;
 
     &::placeholder {
-      color: $color-gray-200;
+      @include text-style-paragraph;
+      color: $color-gray-300;
     }
 
     &:hover,
@@ -318,11 +319,24 @@ $togglewidth: 360px;
   }
 
   &.password {
+
     span {
-      background: url("../assets/images/icons/hide-pswd.svg") no-repeat;
+      background: url("../assets/images/icons/hide-pswd.svg") no-repeat center;
+      transition-duration: 0.3s;
+      cursor: pointer;
 
       &.--show-pswd {
-        background: url("../assets/images/icons/show-pswd.svg") no-repeat;
+        background: url("../assets/images/icons/show-pswd.svg") no-repeat center;
+      }
+    }
+
+    &.--introduced, &.--correct, &.--error{
+
+      span{
+
+        &:hover{
+          background: url("../assets/images/icons/show-pswd.svg") no-repeat center;
+        }
       }
     }
   }
@@ -339,7 +353,7 @@ $togglewidth: 360px;
     }
 
     span {
-      background: url("../assets/images/icons/error.svg") no-repeat;
+      background: url("../assets/images/icons/error.svg") no-repeat center;
     }
   }
 
@@ -349,7 +363,17 @@ $togglewidth: 360px;
     }
 
     span {
-      background: url("../assets//images/icons/intr.svg") no-repeat;
+      background: url("../assets//images/icons/intr.svg") no-repeat center;
+    }
+  }
+
+  &.--correct{
+    input{
+      border: 1px solid $color-gray-200;
+    }
+
+    span{
+      background: url('../assets/images/icons/correct.svg');
     }
   }
 }
