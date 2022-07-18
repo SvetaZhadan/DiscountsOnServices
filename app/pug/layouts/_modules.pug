@@ -148,11 +148,12 @@ mixin m-log-in-popup
       p New user? 
         a(href='#')(create-account) Create an account
       form
-        +b-input('Email Address', 'name','Enter your e-mail')
+        +b-input('Email Address', 'mail','Enter your e-mail')
         +b-input('Password','password','Enter your password', 'password')
         div 
           a(href='#') Forgot password?
-          +b-button('blue') Log in
+          a(href='#').log-in-button Log in
+          //- +b-button('blue', 'user.html') Log in
       
       .sign-with 
         hr

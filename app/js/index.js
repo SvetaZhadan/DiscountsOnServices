@@ -17,13 +17,13 @@ import ApexCharts from "apexcharts";
 import { rippleEffect, Ripple } from "data-ripple";
 import noUiSlider from "nouislider";
 import Scrollbar from "smooth-scrollbar";
-import { faqs, info } from "./sourse.js";
 import ClipboardJS from "clipboard";
 import { platformPage } from "./platform";
 import { homePage } from "./home";
 import { showFaqs } from "./faqs";
 import { logIn } from "./login";
 import { form } from "./form";
+import { userPage } from "./userpage";
 
 //// ================================ Code ======================================
 platformPage();
@@ -31,7 +31,7 @@ homePage();
 showFaqs();
 logIn();
 form();
-
+userPage();
 const initItems = {
   toTop: document.querySelector("[data-scroll-top]"),
   togglePopup: document.querySelectorAll("[data-toggle]"),
@@ -87,9 +87,8 @@ initItems.togglePopup.forEach((btn) => {
 
   window.addEventListener("click", (e) => {
     const target = e.target;
-    if (!target.closest("[data-toggle]")) {
-      // если этот элемент или его родительские элементы не окно навигации и не кнопка
-      block.classList.remove("--active"); // то закрываем окно навигации, удаляя активный класс
+    if (!target.closest("[data-toggle]") && !target.closest(".toggle__popup")) {
+      block.classList.remove("--active"); 
     }
   });
 });

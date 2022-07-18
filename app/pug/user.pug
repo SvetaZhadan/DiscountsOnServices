@@ -1,0 +1,29 @@
+include layouts/_base
+include layouts/_combinations
+include layouts/_modules
+
++m-head('User Account')
++header
+.user-page.container
+  div
+    h2 Personal data management
+    p Exit the office
+
+  section
+    ul
+      li
+        a(href='#') Account info
+      li
+        a(href='#') My Subscriptions
+    .user-page__account-info 
+      h3 Account info
+      +b-input('ID user', 'user-id')
+      +b-input('How can I call you?', 'user-name','Enter your name')
+      +b-input('E-mail', 'user-mail','Enter your e-mail')
+      +b-button('blue') Save changes
+
+  .error-id 
+    p You cant change ID
+  +c-invite
++m-popup-copy
++footer

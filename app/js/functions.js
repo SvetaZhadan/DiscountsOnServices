@@ -34,4 +34,14 @@ function layOut() {
     });
   };
 }
-export { setCard, layOut };
+
+function readTextFile(file) {
+  let rawFile = new XMLHttpRequest();
+  rawFile.open("GET", file, false);
+  rawFile.onreadystatechange = function () {
+    let allText = rawFile.responseText;
+    console.log(allText);
+  };
+  rawFile.send(null);
+}
+export { setCard, layOut, readTextFile };
